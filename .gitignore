@@ -95,5 +95,3 @@ coverage/
 # Uncomment one:
 # package-lock.json
 # yarn.lock
-android/app/build/
-nayan-ai/android/app/build/

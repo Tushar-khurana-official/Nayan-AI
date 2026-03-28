@@ -40,22 +40,23 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                 end={{ x: 1, y: 1 }}
                 style={styles.logoGradient}
               >
-                <Text style={styles.logoIcon}>⚡</Text>
+                <Text style={styles.logoIcon}>👁️</Text>
               </LinearGradient>
             </View>
             <View style={styles.headerText}>
-              <Text style={styles.title}>RunAnywhere</Text>
-              <Text style={styles.subtitle}>React Native SDK Starter</Text>
+              <Text style={styles.title}>NayanAI</Text>
+              <Text style={styles.subtitle}>नेत्रहीन बच्चों का AI साथी</Text>
             </View>
           </View>
 
-          {/* Privacy Banner */}
-          <View style={styles.privacyBanner}>
-            <Text style={styles.privacyIcon}>🔒</Text>
-            <View style={styles.privacyText}>
-              <Text style={styles.privacyTitle}>Privacy-First On-Device AI</Text>
-              <Text style={styles.privacySubtitle}>
-                All AI processing happens locally on your device. No data ever leaves your phone.
+          {/* Offline Badge - USP of the app */}
+          <View style={styles.offlineBadge}>
+            <Text style={styles.offlineIcon}>✅</Text>
+            <View style={styles.offlineText}>
+              <Text style={styles.offlineTitle}>100% Offline — इंटरनेट की जरूरत नहीं</Text>
+              <Text style={styles.offlineSubtitle}>
+                सभी AI processing आपके फोन पर होती है। कोई data बाहर नहीं जाता।
+                285 मिलियन नेत्रहीन लोगों के लिए।
               </Text>
             </View>
           </View>
@@ -108,23 +109,24 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
           {/* Model Info Section */}
           <View style={styles.infoSection}>
+            <Text style={styles.infoHeading}>🧠 On-Device AI Models</Text>
             <View style={styles.infoRow}>
               <Text style={styles.infoIcon}>🤖</Text>
-              <Text style={styles.infoLabel}>LLM</Text>
+              <Text style={styles.infoLabel}>LLM (Text Simplification)</Text>
               <View style={{ flex: 1 }} />
-              <Text style={styles.infoValue}>SmolLM2 360M</Text>
+              <Text style={styles.infoValue}>SmolLM2 135M</Text>
             </View>
             <View style={styles.infoRow}>
-              <Text style={styles.infoIcon}>🎤</Text>
-              <Text style={styles.infoLabel}>STT</Text>
+              <Text style={styles.infoIcon}>🔍</Text>
+              <Text style={styles.infoLabel}>OCR (Hindi/English)</Text>
               <View style={{ flex: 1 }} />
-              <Text style={styles.infoValue}>Whisper Tiny</Text>
+              <Text style={styles.infoValue}>ML Kit On-Device</Text>
             </View>
             <View style={styles.infoRow}>
               <Text style={styles.infoIcon}>🔊</Text>
-              <Text style={styles.infoLabel}>TTS</Text>
+              <Text style={styles.infoLabel}>TTS (Hindi Voice)</Text>
               <View style={{ flex: 1 }} />
-              <Text style={styles.infoValue}>Piper TTS</Text>
+              <Text style={styles.infoValue}>ONNX VITS Local</Text>
             </View>
           </View>
         </ScrollView>
@@ -151,7 +153,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 28,
   },
   logoContainer: {
     marginRight: 16,
@@ -175,42 +177,42 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 28,
-    fontWeight: '700',
+    fontSize: 32,
+    fontWeight: '800',
     color: AppColors.textPrimary,
     letterSpacing: -0.5,
   },
   subtitle: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '500',
     color: AppColors.accentCyan,
-    marginTop: 2,
+    marginTop: 4,
   },
-  privacyBanner: {
+  offlineBadge: {
     flexDirection: 'row',
     padding: 20,
-    backgroundColor: AppColors.surfaceCard + 'CC',
+    backgroundColor: '#0D2B1F',
     borderRadius: 16,
-    borderWidth: 1,
-    borderColor: AppColors.accentCyan + '33',
+    borderWidth: 1.5,
+    borderColor: '#00C853',
     marginBottom: 32,
   },
-  privacyIcon: {
+  offlineIcon: {
     fontSize: 28,
-    marginRight: 16,
+    marginRight: 14,
   },
-  privacyText: {
+  offlineText: {
     flex: 1,
   },
-  privacyTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: AppColors.textPrimary,
+  offlineTitle: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#00E676',
     marginBottom: 4,
   },
-  privacySubtitle: {
+  offlineSubtitle: {
     fontSize: 12,
-    color: AppColors.textSecondary,
+    color: '#A5D6A7',
     lineHeight: 18,
   },
   gridContainer: {
@@ -227,6 +229,15 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderWidth: 1,
     borderColor: AppColors.textMuted + '1A',
+    marginBottom: 40,
+  },
+  infoHeading: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: AppColors.textSecondary,
+    marginBottom: 12,
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
   },
   infoRow: {
     flexDirection: 'row',
@@ -234,16 +245,16 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   infoIcon: {
-    fontSize: 20,
-    marginRight: 12,
+    fontSize: 18,
+    marginRight: 10,
   },
   infoLabel: {
-    fontSize: 14,
+    fontSize: 13,
     color: AppColors.textSecondary,
   },
   infoValue: {
     fontSize: 12,
     color: AppColors.accentCyan,
-    fontWeight: '500',
+    fontWeight: '600',
   },
 });
