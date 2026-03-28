@@ -28,9 +28,9 @@ import { accelerometer, setUpdateIntervalForType, SensorTypes } from 'react-nati
 
 // ─── Reading Speed Options ───────────────────────────────────────────────────
 const SPEED_OPTIONS = [
-  { label: 'धीरे', value: 0.6, color: '#4CAF50' },
-  { label: 'Normal', value: 1.0, color: '#2196F3' },
-  { label: 'तेज़', value: 1.4, color: '#FF9800' },
+  { label: 'धीरे', value: 0.2, color: '#4CAF50' },
+  { label: 'Normal', value: 0.5, color: '#2196F3' },
+  { label: 'तेज़', value: 1.0, color: '#FF9800' },
 ];
 
 export default function CameraScreen({
@@ -63,7 +63,7 @@ export default function CameraScreen({
   useEffect(() => {
     const timer = setTimeout(() => {
       speakGuide('कैमरा किताब के पास रखें और बड़ा बटन दबाएं।');
-    }, 1200);
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
 
